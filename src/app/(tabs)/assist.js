@@ -34,7 +34,10 @@ export default function AssistScreen() {
       // If permission is not granted:
       // - show a clear message
       // - stop this function with return
-
+      if (permissionStatus !== 'granted') {
+        setErrorMessage('Permission to access location was denied.');
+        return;
+      }
       // TODO 3:
       // Request the current device position.
 

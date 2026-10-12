@@ -27,7 +27,9 @@ export default function AssistScreen() {
       // TODO 1:
       // Request foreground location permission.
       // Save the returned status in permissionStatus.
-
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      setPermissionStatus(status);
+      
       // TODO 2:
       // If permission is not granted:
       // - show a clear message
